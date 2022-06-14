@@ -6,8 +6,8 @@ public class Telefonia
     //---------------------
     public long numeroCelular;
     public String operador;
-    public int minutos;
-    public double costoMinuto;
+    public int NumeroMin;
+    public int valorMin;
     private final int COS_MINUTO = 300;
 
     //---------------------
@@ -15,22 +15,20 @@ public class Telefonia
     //---------------------
 
     //Constructor comun u ordinario
-    public Telefonia(long nCel, String Oper, int cMin)
+    public Telefonia(long nCel, String Oper, int cMin, int vMin)
     {
         this.numeroCelular = nCel;
         this.operador = Oper;
-        this.minutos = cMin;
+        this.NumeroMin = cMin;
+        this.valorMin= vMin;
     }
 
     public Telefonia(Telefonia pt)
     {
-        this.minutos = pt.getMinutos();
+        this.NumeroMin = pt.getNumeroMin();
         this.numeroCelular = pt.getNumeroCelular();
-        this.costoMinuto = pt.getCostoMinuto();
+        this.valorMin = (int) pt.getvalorMin();
         this.operador = pt.getOperador();
-    }
-    public Telefonia()
-    {
     }
 
     //Metodos de acceso
@@ -55,34 +53,41 @@ public class Telefonia
         this.operador = operador;
     }
 
-    public int getMinutos() 
+    public int getNumeroMin() 
     {
-        return minutos;
+        return NumeroMin;
     }
 
-    public void setMinutos(int minutos) 
+    public void setNumeroMin(int NumeroMin) 
     {
-        this.minutos = minutos;
+        this.NumeroMin = NumeroMin;
     }
 
-    public double getCostoMinuto() 
+    public double getvalorMin() 
     {
-        return costoMinuto;
+        return valorMin;
     }
 
-    public void setCostoMinuto(double costoMinuto) 
+    public void setvalorMin(int valorMin) 
     {
-        this.costoMinuto = costoMinuto;
+        this.valorMin = valorMin;
+    }
+
+    public String toString()
+    {
+        return "El Costo de plan es de: :"+ "\nTu numero de celular es: " + numeroCelular +"\nLa cantidad de minutos es: " + NumeroMin + "\nEl costo de minutos es: "+valorMin+"\nEl costo de tu plan es: "+ calcularCostoPlan(); 
     }
 
     public double calcularCostoPlan()
     {
-        double costoTotal = COS_MINUTO * minutos;
+        double costoTotal = COS_MINUTO * NumeroMin;
         if(operador.equals("Movilujo"))
         {
             costoTotal = costoTotal * 0.5;
         }
         return costoTotal;
     }
-        
+
+    public void getNumeroCelular(long parseLong) {
+    }    
 }

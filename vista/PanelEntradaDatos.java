@@ -18,12 +18,14 @@ public class PanelEntradaDatos extends JPanel
     private JLabel ly;
     private JLabel lz;
     private JLabel lw;
+    private JLabel lh;
     private JTextField tfx;
     private JTextField tfy;
     private JTextField tfz;
     private JTextField tfw;
-    private JComboBox cbOperador;
-    private String[] operadores = {"Movilujo", "Movistar", "Claro", "Tigo"};
+    private JTextField tfh;
+    private JComboBox cbedicionLujo;
+    private String[] edicionLujo = {"De lujo", "No es de lujo"};
     //private JLabel lImagen;
     //private ImageIcon iImagen;
     
@@ -42,38 +44,47 @@ public class PanelEntradaDatos extends JPanel
         //this.add(lImagen);
 
         // crear y agregar etiqueta x
-        lx = new JLabel("Numero de celular=");
-        lx.setBounds(390, 50, 120, 20);
+        lx = new JLabel("Nombre del libro =");
+        lx.setBounds(290, 30, 200, 20);
         this.add(lx);
 
         //crear caja de texto x
         tfx = new JTextField();
-        tfx.setBounds(500,50,80,20);
+        tfx.setBounds(500,30,80,20);
         this.add(tfx);
 
         // crear y agregar etiqueta y
-        ly = new JLabel("Minutos =");
-        ly.setBounds(390, 100, 120, 20);
+        ly = new JLabel("Nombre autor 1=");
+        ly.setBounds(290, 70, 120, 20);
         this.add(ly);
 
         //crear caja de texto y
         tfy = new JTextField();
-        tfy.setBounds(500,100,80,20);
+        tfy.setBounds(500,70,80,20);
         this.add(tfy);
 
+        lh = new JLabel("Nombre autor 2=");
+        lh.setBounds(290, 110, 120, 20);
+        this.add(lh);
+
+        //crear caja de texto y
+        tfh = new JTextField();
+        tfh.setBounds(500,110,80,20);
+        this.add(tfh);
+
         // crear y agregar etiqueta y
-        lz = new JLabel("Costo minutos =");
-        lz.setBounds(390, 150, 120, 20);
+        lz = new JLabel("Año edicion =");
+        lz.setBounds(290, 140, 120, 20);
         this.add(lz);
 
         //crear caja de texto y
         tfz = new JTextField();
-        tfz.setBounds(500,150,80,20);
+        tfz.setBounds(500,140,80,20);
         this.add(tfz);
 
         // crear y agregar etiqueta x
-        lw = new JLabel("operadores=");
-        lw.setBounds(390, 200, 120, 20);
+        lw = new JLabel("Edicion =");
+        lw.setBounds(290, 180, 120, 20);
         this.add(lw);
 
         //crear caja de texto x
@@ -81,13 +92,13 @@ public class PanelEntradaDatos extends JPanel
         tfw.setBounds(500,200,80,20);
         this.add(tfw);*/
 
-        cbOperador = new JComboBox();
-        for(int i=0; i<operadores.length;i++)
+        cbedicionLujo = new JComboBox();
+        for(int i=0; i<edicionLujo.length;i++)
         {
-            cbOperador.addItem(operadores[i]);
+            cbedicionLujo.addItem(edicionLujo[i]);
         }
-        cbOperador.setBounds(500,200,80,20);
-        this.add(cbOperador);
+        cbedicionLujo.setBounds(500,180,80,20);
+        this.add(cbedicionLujo);
 
         // Definicion contenedor del panel
         this.setLayout(null);
@@ -114,14 +125,14 @@ public class PanelEntradaDatos extends JPanel
         return tfz.getText();
     }
     
-    public String getTfw()
+    public String getTfh()
     {
-        return tfw.getText();
+        return tfh.getText();
     }
 
-    public String getOperador()
+    public String getEdicionLujo()
     {
-        return (String) cbOperador.getSelectedItem();
+        return (String) cbedicionLujo.getSelectedItem();
     }
     // metodo borrar cajas de texto
     public void borrar()
@@ -130,6 +141,7 @@ public class PanelEntradaDatos extends JPanel
         tfy.setText("");
         tfz.setText("");
         tfw.setText("");
+        tfh.setText("");
     }
     
 

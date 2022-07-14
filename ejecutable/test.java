@@ -1,7 +1,7 @@
 package ejecutable;
 
 import controlador.Controlador;
-import modelo.Telefonia;
+import modelo.Libro;
 import vista.VentanaPrincipal;
 
 public class test 
@@ -9,7 +9,7 @@ public class test
     public static void main (String[] args)
     {
        VentanaPrincipal miVentana= new VentanaPrincipal();
-       Telefonia miModelo = new Telefonia(0,"", 0,0);  
+       Libro miModelo = new Libro(null, null, null, 0, null);  
        Controlador miControlador = new Controlador(miVentana,miModelo);
 
     }   

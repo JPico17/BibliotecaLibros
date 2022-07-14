@@ -7,7 +7,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
 
-import modelo.Telefonia;
+import modelo.Libro;
 
 public class PanelResultados extends JPanel
 {
@@ -41,7 +41,7 @@ public class PanelResultados extends JPanel
 
     }
     // metodo de acceso a la informacion
-    public void mostrarResultado(Telefonia p)
+    public void mostrarResultado(Libro p)
     {
         taResultado.setText(p.toString());
     }

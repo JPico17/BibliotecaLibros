@@ -3,7 +3,7 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vista.VentanaPrincipal;
-import modelo.Telefonia;
+import modelo.Libro;
 
 public class Controlador implements ActionListener
 {
@@ -13,14 +13,14 @@ public class Controlador implements ActionListener
         //------------
     
         private VentanaPrincipal vista;
-        private Telefonia modelo;
+        private Libro modelo;
     
         //------------
         // Metodos
         //------------
     
         //metodo constructor
-        public Controlador(VentanaPrincipal pVista, Telefonia pModelo)
+        public Controlador(VentanaPrincipal pVista, Libro pModelo)
         {
             this.vista = pVista;
             this.modelo= pModelo;
@@ -47,15 +47,12 @@ public class Controlador implements ActionListener
     
             if(comando.equals("Hallar"))
             {
-                modelo.setNumeroCelular(Long.parseLong(vista.miPanelEntradaDatos.getTfx()));
-                modelo.setOperador(vista.miPanelEntradaDatos.getOperador());
-                modelo.setNumeroMin(Integer.parseInt(vista.miPanelEntradaDatos.getTfy()));
-                modelo.setvalorMin(Integer.parseInt(vista.miPanelEntradaDatos.getTfz()));
-                modelo.calcularCostoPlan();
-                
+                modelo.setNombreLibro(vista.miPanelEntradaDatos.getTfx());
+                modelo.setNombreAutor1(vista.miPanelEntradaDatos.getTfy());
+                modelo.setNombreAutor2(vista.miPanelEntradaDatos.getTfh());
+                modelo.setAñoEdicion(Integer.parseInt(vista.miPanelEntradaDatos.getTfz()));
+                modelo.setEdicionLujo(vista.miPanelEntradaDatos.getEdicionLujo());
                 vista.miPanelResultados.mostrarResultado(modelo);
-                
-    
             }
         }
 }
